@@ -1,22 +1,22 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [audioTime, setAudioTime] = useState(0);
+
+  const handleResetAudio = () => {
+    setAudioTime(5);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Hello, React!</h1>
+        <audio controls>
+          <source src="audio/mahmoud-khalil-al-husary-surah-001.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <button onClick={handleResetAudio}>Reset Audio</button>
       </header>
     </div>
   );
